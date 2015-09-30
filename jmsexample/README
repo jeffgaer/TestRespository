@@ -1,0 +1,25 @@
+This example builds three executable  in the director target/appassembler/bin
+jmsServer, a simple jmsServer
+publisher a utility to publish a test message
+subscriber a utility that subscribes to a topic and prints out a text message when ever one is received
+
+jmsServer takes no arguments its configuration comes from configuration xml files under config.
+It is configured with one topic TopicOne and listens on port 4350
+
+to execute the example open three windows and cd to target/appassembler/bin
+
+in window one execute jmsServer
+
+in window two start the subscriber with the correct parameters ( note must  use host name or ip localhost does not work
+./subscriber <hostname> 4350 TopicOne
+
+in window three publish some messages 
+
+./publisher <hostname> 4350 TopicOne <msgText>
+
+You should see the messages printed out in the subscriber window. 
+
+You should be able to directly use the subscriber as is with just implementing what you want done with the message text. To modify
+there is an inner class in subscriber DoSomeWork. Its onMessage method is called whenever a message is published to the Topic it is subscribed to. 
+
+
