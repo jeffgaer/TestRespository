@@ -22,4 +22,5 @@ You should see the messages printed out in the subscriber window.
 You should be able to directly use the subscriber as is with just implementing what you want done with the message text. To modify
 there is an inner class in subscriber DoSomeWork. Its onMessage method is called whenever a message is published to the Topic it is subscribed to. 
 
+test
 .
